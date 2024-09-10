@@ -22,12 +22,12 @@ bool esNombreValido(const string& input) {
     return regex_match(input, regex("[A-Z][a-z]+\\s[A-Z][a-z]+"));
 }
 
-// Función para validar los comentarios (puede contener letras, espacios, comas o puntos)
+// Función para validar los comentario
 bool esComentarioValido(const string& input) {
     return regex_match(input, regex("([A-Z]+|[a-z]+|\\s|,|\\.+[a-z])*"));
 }
 
-// Función para procesar el número de teléfono (solo dígitos)
+// Función para procesar el número de teléfono(solo dígitos)
 bool esTelefonoValido(const string& input) {
     return regex_match(input, regex("[0-9]{8}"));
 }
@@ -42,23 +42,23 @@ bool esNitValido(const string& input) {
     return regex_match(input, regex("[0-9]{8}-[0-9]"));
 }
 
-// Función para validar la fecha (formato DD/MM/YY)
+// Función para validar la fecha 
 bool esFechaValida(const string& input) {
     return regex_match(input, regex("\\d{2}/\\d{2}/\\d{2}"));
 }
 
-// Función para validar la hora (formato HH:MM AM/PM)
+// Función para validar la hora
 bool esHoraValida(const string& input) {
     return regex_match(input, regex("[0-1][0-9]:[0-5][0-9](AM|PM)"));
 }
 
-// Procesar archivo separado por "&" (simulando un archivo de entrada)
+// Procesar archivo separado por "&"
 void procesarEntrada(const string& datos) {
     Estado estado = NOMBRE; // Estado inicial
     stringstream ss(datos);
     string token;
 
-    // Separar los datos por el delimitador '&'
+    
     while (getline(ss, token, '&')) {
         switch (estado) {
         case NOMBRE:
